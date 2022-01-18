@@ -5,8 +5,15 @@
  * - "NUL" s'il est nul
  */
 function signe(nombre) {
+    if(nombre > 0)
+        return "POSITIVE";
+    else if (nombre < 0)
+        return "NEGATIVE";
+    else(nombre == 0)
+        return "NUL";
+};
+console.log(signe(0));
 
-}
 
 /**
  * Programmer une fonction prenant en argument un tableau de nombres, et qui renvoie un tableau ne contenant que les nombres pairs.
