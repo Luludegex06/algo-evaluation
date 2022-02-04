@@ -33,14 +33,27 @@ console.log(rotate(tableau, 2));
 /**
  * Suite de Syracuse
  * 
- * La suite de Syracuse est une suite de nombre (nous avions vu la suite de Fibonacci en cours), calculée en prenant pour chaque élément la moitié de sa valeur s'il est pair
+ * La suite de Syracuse est une suite de nombre (nous avions vu la suite de Fibonacci en cours), calculée 
+ * en prenant pour chaque élément la moitié de sa valeur s'il est pair
  * et le triple plus 1 s'il est impair. Cette suite est infinie, et nous ne prendrons que les 10 premiers éléments.
  * 
- * Programmer une fonction prenant en argument le nombre pour lequel la suite est calculée et qui renvoie un tableau contenant les 10 premiers éléments de la suite de Syracuse.
+ * Programmer une fonction prenant en argument le nombre pour lequel la suite est calculée et qui renvoie un
+ * tableau contenant les 10 premiers éléments de la suite de Syracuse.
  * 
  * Par exemple, pour 14, la suite sera : [14, 7, 22, 11, 34, 17, 52, 26, 13, 40]
  * Pour 1, la suite sera : [1, 4, 2, 1, 4, 2, 1, 4, 2, 1]
  */
 function syracuse(nombre) {
-
-}
+    let syracuseSuite =[nombre];
+    while(syracuseSuite.length < 10){
+        if ((nombre%2)==0){
+            nombre = nombre/2;
+        }
+        else if ((nombre%2)!=0){
+            nombre = (nombre*3)+1
+        };
+        syracuseSuite.push(nombre);
+    }
+    return syracuseSuite;
+};
+console.log(syracuse(14));
